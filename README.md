@@ -1,0 +1,5 @@
+-- It is a library management app
+-- Coded in Python and using Pyqt5 library
+-- You can use that app for manage your library.
+-- You can add books, authors,members and you can lend books to members.
+-- You can search your books in your library.
