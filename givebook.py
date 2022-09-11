@@ -32,7 +32,7 @@ class GiveBook(QWidget):
         img_book=QLabel(topFrame)
         img=QPixmap('icons/addperson.png')
         img_book.setPixmap(img)
-        lbl_title=QLabel("Add Member",topFrame)
+        lbl_title=QLabel("Lend Book",topFrame)
         lbl_title.setStyleSheet("color:#003f8a;font:25pt Times Bold")
         top_layout.addStretch()
         top_layout.addWidget(img_book)
@@ -54,10 +54,10 @@ class GiveBook(QWidget):
         members=cur.execute(query2).fetchall()
         for member in members:
             self.member_combo.addItem(str(member[0])+"-"+member[1])
-        add_button=QPushButton("Add",bottomFrame)
+        add_button=QPushButton("Lend Book",bottomFrame)
         add_button.clicked.connect(self.lendBook)
-        bottom_layout.addRow(QLabel("Name :"),self.book_combo)
-        bottom_layout.addRow(QLabel("Phone :"),self.member_combo)
+        bottom_layout.addRow(QLabel("Book Name :"),self.book_combo)
+        bottom_layout.addRow(QLabel("Member :"),self.member_combo)
         bottom_layout.addRow(QLabel(""),add_button)
         main_layout.addWidget(bottomFrame)
 
